@@ -34,11 +34,28 @@ namespace DanmarksRadioXP
             return result;
         }
 
+        public Records? GetById(int id)
+        {
+            return _records.Find(record => record.Id == id);
+        }
+
         public Records Add(Records records)
         {
             records.Validate();
             records.Id = nextId++;
             _records.Add(records);
+            return records;
+        }
+
+
+        public Records? Remove(int id)
+        {
+           Records? records = GetById(id);
+            if (records == null) 
+            {
+                return null;
+            }
+            _records.Remove(records);
             return records;
         }
 
