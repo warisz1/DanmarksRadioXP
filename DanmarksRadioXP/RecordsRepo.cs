@@ -60,7 +60,21 @@ namespace DanmarksRadioXP
             
         }
 
-        //hej
+       public Records? Update(int id, Records records) 
+        {
+            records.Validate();
+            Records? existingRecord = GetById(id);
+            if (existingRecord == null) 
+            {
+                return null;
+            }
+            existingRecord.Title = records.Title;
+            existingRecord.Artist = records.Artist;
+            existingRecord.Duration = records.Duration;
+            existingRecord.PublicationYear = records.PublicationYear;
+            return existingRecord;
+
+        }
 
 
 
