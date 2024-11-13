@@ -34,7 +34,7 @@ namespace DanmarksRadioXP
             {
                 throw new ArgumentNullException("title is null");
             }
-            if (Title.Length < 2)
+            if (Title.Length < 3)
             {
                 throw new ArgumentOutOfRangeException("Title must be atleast 3 charchters");
             }
