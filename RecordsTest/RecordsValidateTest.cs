@@ -29,5 +29,26 @@ namespace RecordsTest
 
         }
 
+        [TestMethod]
+        public void ValidateArtist()
+        {
+            goodRecord.ValidateArtist();
+            Assert.ThrowsException<ArgumentNullException>(() => nullArtist.ValidateArtist());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => shortArtist.ValidateArtist());
+        }
+
+        [TestMethod]
+        public void ValidateDuration()
+        {
+            goodRecord.ValidateDuration();
+            Assert.ThrowsException<ArgumentOutOfRangeException>(()=> negativeDuration.ValidateDuration());
+        }
+
+        [TestMethod]
+        public void ValidatePublicationYear()
+        {
+            goodRecord.ValidatePublicationYear();
+            Assert.ThrowsException<ArgumentOutOfRangeException>(()=> furtureYear.ValidatePublicationYear());
+        }
     }
 }
