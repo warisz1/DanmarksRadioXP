@@ -68,6 +68,14 @@ namespace DanmarksRadioXP
             }
         }
 
+        public void Validate()
+        {
+            ValidateTitle();
+            ValidateArtist();
+            ValidateDuration();
+            ValidatePublicationYear();
+        }
+
 
 
     }

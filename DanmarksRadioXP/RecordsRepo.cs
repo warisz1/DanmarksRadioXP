@@ -19,10 +19,27 @@ namespace DanmarksRadioXP
             _records.Add(new Records() { Id = nextId++, Title = "Sorry", Artist = "Justin Biber", Duration = 306, PublicationYear = 2015 });
         }
 
-        public IEnumerable<Records> GetAll()
+        public IEnumerable<Records> GetAll(string? titleInclude = null, string? artistInclude = null)
         {
             IEnumerable<Records> result = new List<Records>(_records);
+            if (titleInclude != null) 
+            {
+                result = result.Where(m => m.Title.Contains(titleInclude));
+            }
+            if (artistInclude != null)
+            {
+                result = result.Where(m => m.Title.Contains(artistInclude));
+            }
+
             return result;
+        }
+
+        public Records Add(Records records)
+        {
+            records.Validate();
+            records.Id = nextId++;
+            _records.Add(records);
+            return records;
         }
 
 
