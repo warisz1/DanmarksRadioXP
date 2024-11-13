@@ -56,7 +56,7 @@ namespace DanmarksRadioXP
                 return null;
             }
             _records.Remove(records);
-            return records;
+            return records; 
         }
 
 
