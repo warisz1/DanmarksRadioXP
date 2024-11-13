@@ -50,5 +50,6 @@ namespace RecordsTest
             goodRecord.ValidatePublicationYear();
             Assert.ThrowsException<ArgumentOutOfRangeException>(()=> furtureYear.ValidatePublicationYear());
         }
+
     }
 }
