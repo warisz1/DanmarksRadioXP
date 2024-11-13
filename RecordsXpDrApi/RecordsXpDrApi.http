@@ -1,0 +1,6 @@
+@RecordsXpDrApi_HostAddress = http://localhost:5258
+
+GET {{RecordsXpDrApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
